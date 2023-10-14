@@ -1,9 +1,12 @@
 import { DateTime } from "@/components/DateTime";
+import { withPrettyDateTime } from "@/components/DateTimePretty";
 
 interface VideoProps {
   url: string;
   date: string;
 }
+
+const DateTimePretty = withPrettyDateTime(DateTime);
 
 export function Video({ url, date }: VideoProps) {
   return (
@@ -14,7 +17,7 @@ export function Video({ url, date }: VideoProps) {
         allow="autoplay; encrypted-media"
         allowFullScreen={true}
       ></iframe>
-      <DateTime date={date} />
+      <DateTimePretty date={date} />
     </div>
   );
 }
